@@ -1,0 +1,212 @@
+[  
+    {  
+       "created_at":"2018-12-21 06:05:16",
+       "description":"builds a nice json of all your github contributions from start to finish, also has cli to create custom events",
+       "html_url":"https://github.com/sm5art/contributions-fetcher",
+       "name":"contributions-fetcher",
+       "type":0,
+       "index":0
+    },
+    {  
+       "created_at":"2018-12-19 06:21:38",
+       "description":"making one of those trendy sites that everyone has",
+       "html_url":"https://github.com/sm5art/portfolio",
+       "name":"portfolio",
+       "type":0,
+       "index":1
+    },
+    {  
+       "created_at":"2018-10-26 03:02:27",
+       "description":"genetic algorithm pong game",
+       "html_url":"https://github.com/sm5art/genetic-pong",
+       "extra_type": 0,
+       "name":"genetic-pong",
+       "type":0,
+       "index":2
+    },
+    {  
+       "created_at":"2017-10-06 08:29:59",
+       "description":"pulling all data for rsos and making a way better directory",
+       "html_url":"https://github.com/sm5art/uw-rso-directory",
+       "name":"uw-rso-directory",
+       "type":0,
+       "index":3
+    },
+    {  
+       "created_at":"2017-09-25 00:00:00",
+       "description":"BS Computer Science Classes: Num Analysis, Matrix Algebra, Vector Analysis, Complex Analysis, Data Structures, Mechanics",
+       "html_url":"",
+       "extra_type": 1,
+       "name":"Started studies at University of Washington",
+       "type":2,
+       "index":4
+    },
+    {  
+       "created_at":"2017-06-10 00:00:00",
+       "description":"Worked in a python data science stack working on signal research",
+       "html_url":"",
+       "name":"Started Work at Nipun Capital as Quant. Finance Research Intern",
+       "type":1,
+       "index":5
+    },
+    {  
+       "created_at":"2017-06-09 00:00:00",
+       "description":"UW GPA: 3.8 W GPA 4.25 Classes: Calc 1, 2 Physics 1, 2 CS 101",
+       "html_url":"",
+       "name":"Graduated from California High School",
+       "type":2,
+       "index":6
+    },
+    {  
+       "created_at":"2017-02-26 08:58:19",
+       "description":"kernel",
+       "html_url":"https://github.com/sm5art/kernel",
+       "name":"kernel",
+       "type":0,
+       "index":7
+    },
+    {  
+       "created_at":"2017-02-26 02:20:50",
+       "description":"A simple OS kernel for research, teaching, and fun.",
+       "html_url":"https://github.com/sm5art/basekernel",
+       "name":"basekernel",
+       "type":0,
+       "index":8
+    },
+    {  
+       "created_at":"2017-02-25 01:13:04",
+       "description":"How to Make a Computer Operating System in C++",
+       "html_url":"https://github.com/sm5art/How-to-Make-a-Computer-Operating-System",
+       "name":"How-to-Make-a-Computer-Operating-System",
+       "type":0,
+       "index":9
+    },
+    {  
+       "created_at":"2017-01-22 20:38:27",
+       "description":"I am making a QuadCopter. This is probably a bad idea.",
+       "html_url":"https://github.com/sm5art/QuadCopter",
+       "name":"QuadCopter",
+       "type":0,
+       "index":10
+    },
+    {  
+       "created_at":"2016-11-18 04:03:19",
+       "description":"This is a python implementation of a simple IPv4 Router with firewall",
+       "html_url":"https://github.com/sm5art/ipv4router",
+       "name":"ipv4router",
+       "type":0,
+       "index":11
+    },
+    {  
+       "created_at":"2016-11-01 06:27:50",
+       "description":"An API wrapper for Discord written in Python.",
+       "html_url":"https://github.com/sm5art/discord.py",
+       "name":"discord.py",
+       "type":0,
+       "index":12
+    },
+    {  
+       "created_at":"2016-10-27 16:32:12",
+       "description":"The official repository of the Eesen project",
+       "html_url":"https://github.com/sm5art/eesen",
+       "name":"eesen",
+       "type":0,
+       "index":13
+    },
+    {  
+       "created_at":"2016-10-18 06:11:10",
+       "description":"discord bot for one simple purpose",
+       "html_url":"https://github.com/sm5art/memr-bot",
+       "name":"memr-bot",
+       "type":0,
+       "index":14
+    },
+    {  
+       "created_at":"2016-10-15 19:55:49",
+       "description":"Python 3.5+ web server that's written to go fast",
+       "html_url":"https://github.com/sm5art/sanic",
+       "name":"sanic",
+       "type":0,
+       "index":15
+    },
+    {  
+       "created_at":"2016-08-05 18:46:23",
+       "description":"plump your data in, dump the labels out, a shitty machine learning framework",
+       "html_url":"https://github.com/sm5art/plumpdump",
+       "name":"plumpdump",
+       "type":0,
+       "index":16
+    },
+    {  
+       "created_at":"2016-06-20 17:07:57",
+       "description":"writing an api for address validation for ecommerce",
+       "html_url":"https://github.com/sm5art/address-validation",
+       "name":"address-validation",
+       "type":0,
+       "index":17
+    },
+    {  
+       "created_at":"2016-06-10 00:00:00",
+       "description":"Python/ Javascript full stack developer: used react-redux for front-end. Projects: analytics dashboard, address validation, a/b testing",
+       "html_url":"",
+       "name":"Started Work at Minted as Software Engineer Intern",
+       "type":1,
+       "index":18
+    },
+    {  
+       "created_at":"2016-05-28 06:15:43",
+       "description":"This is a collection if jupyter notebooks of my ideas as I learn machine learning/deep learning",
+       "html_url":"https://github.com/sm5art/deep-learning",
+       "name":"deep-learning",
+       "type":0,
+       "index":19
+    },
+    {  
+       "created_at":"2016-05-26 05:50:47",
+       "description":"Using d3 and reactjs and an express hosting server, I visualize related videos on youtube in terms of view count.",
+       "html_url":"https://github.com/sm5art/data-visualization",
+       "name":"data-visualization",
+       "type":0,
+       "index":20
+    },
+    {  
+       "created_at":"2016-05-21 05:34:29",
+       "description":"Using my knowledge of javascript stacks and real-time communication I write a server composed of many moving parts that serves dynamic stock data.",
+       "html_url":"https://github.com/sm5art/stock-dashboard",
+       "name":"stock-dashboard",
+       "type":0,
+       "index":21
+    },
+    {  
+       "created_at":"2016-05-19 03:10:54",
+       "description":"Mix react rendering on server and on client sided for better search engine indexing.",
+       "html_url":"https://github.com/sm5art/react-server",
+       "name":"react-server",
+       "type":0,
+       "index":22
+    },
+    {  
+       "created_at":"2016-05-04 16:38:16",
+       "description":"boilerjs is a boilerplate for express, react, mongodb, and passport",
+       "html_url":"https://github.com/sm5art/boilerjs",
+       "name":"boilerjs",
+       "type":0,
+       "index":23
+    },
+    {  
+       "created_at":"2016-04-21 05:19:29",
+       "description":"What links are being spammed the most in realtime on twitch",
+       "html_url":"https://github.com/sm5art/twitch_spam",
+       "name":"twitch_spam",
+       "type":0,
+       "index":24
+    },
+    {  
+       "created_at":"2016-03-30 03:12:58",
+       "description":"a tornado python webserver that serves a simple dropbox like service.",
+       "html_url":"https://github.com/sm5art/dropbox",
+       "name":"dropbox",
+       "type":0,
+       "index":25
+    }
+ ]

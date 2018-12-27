@@ -1,0 +1,15 @@
+
+.herotransition {
+    animation: 2s ease-out 1s fadein;
+    animation-fill-mode: forwards;  
+
+}
+
+@keyframes fadein {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+  }
