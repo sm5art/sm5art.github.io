@@ -15609,13 +15609,16 @@ var Hero = function (_Component) {
                                 _react2.default.createElement(
                                     _Grid2.default,
                                     { item: true, xs: 12 },
-                                    ["embedded systems", "machine learning", "data science", "software engineering"].map(function (e) {
-                                        return _react2.default.createElement(
-                                            _Typography2.default,
-                                            { className: classes.gothic, variant: 'h3', color: 'textPrimary' },
-                                            e
-                                        );
-                                    })
+                                    _react2.default.createElement(
+                                        _Typography2.default,
+                                        { className: classes.gothic, variant: 'h3', color: 'textPrimary' },
+                                        'math student/researcher at UW Seattle'
+                                    ),
+                                    _react2.default.createElement(
+                                        _Typography2.default,
+                                        { className: classes.gothic, variant: 'h3', color: 'textPrimary' },
+                                        'self-taught programmer'
+                                    )
                                 ),
                                 _react2.default.createElement(
                                     _Grid2.default,
@@ -49731,7 +49734,9 @@ var Bio = function (_Component) {
                         _react2.default.createElement(
                             _Typography2.default,
                             { variant: 'body1' },
-                            'Currently studying Computer Science at University of Washington'
+                            'Currently studying Mathematics at University of Washington',
+                            _react2.default.createElement('br', null),
+                            'Research assistant at Autonomous Flight Systems Lab'
                         ),
                         _react2.default.createElement('img', { className: classes.uwImage, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSuQtl8fZhTO5GbjRjSYWy1q3EttHKvhYRvrSAOzxd8PgN8NeioQ' })
                     ),
@@ -49760,7 +49765,7 @@ var Bio = function (_Component) {
                     ),
                     _react2.default.createElement(
                         BioItem,
-                        { image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/24/08/spacex-rocket-launch-watch-video-0.jpg', classes: classes, title: 'Aspirations/Interests' },
+                        { image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/24/08/spacex-rocket-launch-watch-video-0.jpg', classes: classes, title: 'Interests' },
                         _react2.default.createElement(
                             _Typography2.default,
                             { variant: 'body1' },
@@ -49770,15 +49775,10 @@ var Bio = function (_Component) {
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Machine learning applications in',
+                                    'Mathematical applications in',
                                     _react2.default.createElement(
                                         'ul',
                                         null,
-                                        _react2.default.createElement(
-                                            'li',
-                                            null,
-                                            'genetics'
-                                        ),
                                         _react2.default.createElement(
                                             'li',
                                             null,
@@ -49787,19 +49787,45 @@ var Bio = function (_Component) {
                                         _react2.default.createElement(
                                             'li',
                                             null,
-                                            'computer vision'
+                                            'computer science'
                                         )
                                     )
                                 ),
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Aerospace technologies (hobby rc quadcopters)'
+                                    'Hobby electronics',
+                                    _react2.default.createElement('br', null),
+                                    'i.e.',
+                                    _react2.default.createElement(
+                                        'ul',
+                                        null,
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'Pi'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'Arduino'
+                                        )
+                                    )
                                 ),
                                 _react2.default.createElement(
                                     'li',
                                     null,
                                     'Blockchain platform technologies (EOS, ETH)'
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    'Skiing'
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    'Rock climbing'
                                 )
                             )
                         )
