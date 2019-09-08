@@ -15468,10 +15468,6 @@ var _timeline = __webpack_require__(132);
 
 var timeline = _interopRequireWildcard(_timeline);
 
-var _CloudDownload = __webpack_require__(294);
-
-var _CloudDownload2 = _interopRequireDefault(_CloudDownload);
-
 var _reactRedux = __webpack_require__(59);
 
 var _reactRouter = __webpack_require__(90);
@@ -15528,6 +15524,8 @@ var Hero = function (_Component) {
     _createClass(Hero, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var _this2 = this;
+
             var that = this;
             window.addEventListener("resize", this.updateDimensions);
             if (!this.props.state.timeline.loaded) {
@@ -15547,6 +15545,10 @@ var Hero = function (_Component) {
                 this.currentTime = 30;
                 this.play();
             }, false);
+
+            setInterval(function () {
+                if (_this2.props.state.timeline.loaded) _this2.setState({ years: _this2.getYearDifference() });
+            }, 1000);
         }
     }, {
         key: 'updateDimensions',
@@ -15574,10 +15576,10 @@ var Hero = function (_Component) {
         key: 'getYearDifference',
         value: function getYearDifference() {
             var d = new Date();
-            var current_year = d.getFullYear();
+            var current_year = d.getTime();
             var n = this.props.state.timeline.data.length;
-            var first_year = parseInt(this.props.state.timeline.data[n - 1]['created_at'].slice(0, 4));
-            return current_year - first_year;
+            var first_year = Date.parse(this.props.state.timeline.data[n - 1]['created_at']);
+            return parseInt((current_year - first_year) / 1000);
         }
     }, {
         key: 'componentDidUpdate',
@@ -15612,27 +15614,12 @@ var Hero = function (_Component) {
                                     _react2.default.createElement(
                                         _Typography2.default,
                                         { className: classes.gothic, variant: 'h3', color: 'textPrimary' },
-                                        'math student/researcher at UW Seattle'
+                                        'math student at UW Seattle'
                                     ),
                                     _react2.default.createElement(
                                         _Typography2.default,
                                         { className: classes.gothic, variant: 'h3', color: 'textPrimary' },
                                         'self-taught programmer'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    _Grid2.default,
-                                    { item: true, xs: 12 },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { style: { display: 'flex' } },
-                                        _react2.default.createElement('div', { style: { display: 'inline' }, className: classes.grow }),
-                                        _react2.default.createElement(
-                                            _Button2.default,
-                                            { target: '_sblank', variant: 'contained', className: classes.button, color: 'primary', href: '/static/AKresume.pdf' },
-                                            _react2.default.createElement(_CloudDownload2.default, { className: classes.rightIcon }),
-                                            'CV'
-                                        )
                                     )
                                 ),
                                 _react2.default.createElement(
@@ -15647,6 +15634,18 @@ var Hero = function (_Component) {
                                             'span',
                                             { className: classes.yearText },
                                             this.state.years
+                                        ),
+                                        ' \xA0seconds\xA0/\xA0',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: classes.yearText },
+                                            parseInt(this.state.years / 60 / 60 / 24)
+                                        ),
+                                        ' \xA0days\xA0/\xA0',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: classes.yearText },
+                                            parseInt(this.state.years / 60 / 60 / 24 / 365)
                                         ),
                                         ' \xA0years of experience and counting'
                                     )
@@ -49734,9 +49733,20 @@ var Bio = function (_Component) {
                         _react2.default.createElement(
                             _Typography2.default,
                             { variant: 'body1' },
-                            'Currently studying Mathematics at University of Washington',
-                            _react2.default.createElement('br', null),
-                            'Research assistant at Autonomous Flight Systems Lab'
+                            _react2.default.createElement(
+                                'ul',
+                                null,
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    'Currently studying Mathematics at University of Washington minor in Applied Mathematics \'2021'
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    'Part-time Full Stack Engineer at Heali.ai'
+                                )
+                            )
                         ),
                         _react2.default.createElement('img', { className: classes.uwImage, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSuQtl8fZhTO5GbjRjSYWy1q3EttHKvhYRvrSAOzxd8PgN8NeioQ' })
                     ),
@@ -49752,20 +49762,86 @@ var Bio = function (_Component) {
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Quant. Research Intern at Nipun Capital LLC'
+                                    'Quant. Research Intern at Nipun Capital LLC',
+                                    _react2.default.createElement('br', null),
+                                    _react2.default.createElement(
+                                        'span',
+                                        { style: { fontWeight: "bold" } },
+                                        'Stack'
+                                    ),
+                                    ': ',
+                                    _react2.default.createElement(
+                                        'ul',
+                                        null,
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'python'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'keras'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'pandas/numpy'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'MySQL'
+                                        )
+                                    )
                                 ),
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Software Engineer intern at Minted'
-                                ),
-                                _react2.default.createElement('img', { className: classes.uwImage, src: 'https://d1qb2nb5cznatu.cloudfront.net/startups/i/32625-9e2fc8ebe2ab0c51910a512bbdfe5a4a-medium_jpg.jpg?buster=1507058558' })
+                                    'Software Engineer intern at Minted',
+                                    _react2.default.createElement('br', null),
+                                    _react2.default.createElement(
+                                        'span',
+                                        { style: { fontWeight: "bold" } },
+                                        'Stack'
+                                    ),
+                                    ': ',
+                                    _react2.default.createElement(
+                                        'ul',
+                                        null,
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'python'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'MySQL'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'React-redux'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'AWS'
+                                        ),
+                                        _react2.default.createElement(
+                                            'li',
+                                            null,
+                                            'Vagrant'
+                                        )
+                                    )
+                                )
                             )
                         )
                     ),
                     _react2.default.createElement(
                         BioItem,
-                        { image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/24/08/spacex-rocket-launch-watch-video-0.jpg', classes: classes, title: 'Interests' },
+                        { image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/24/08/spacex-rocket-launch-watch-video-0.jpg', classes: classes, title: 'Professional Interests' },
                         _react2.default.createElement(
                             _Typography2.default,
                             { variant: 'body1' },
@@ -49775,57 +49851,17 @@ var Bio = function (_Component) {
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Mathematical applications in',
-                                    _react2.default.createElement(
-                                        'ul',
-                                        null,
-                                        _react2.default.createElement(
-                                            'li',
-                                            null,
-                                            'finance'
-                                        ),
-                                        _react2.default.createElement(
-                                            'li',
-                                            null,
-                                            'computer science'
-                                        )
-                                    )
+                                    'Game design/development (especially distribution/scaling)'
                                 ),
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Hobby electronics',
-                                    _react2.default.createElement('br', null),
-                                    'i.e.',
-                                    _react2.default.createElement(
-                                        'ul',
-                                        null,
-                                        _react2.default.createElement(
-                                            'li',
-                                            null,
-                                            'Pi'
-                                        ),
-                                        _react2.default.createElement(
-                                            'li',
-                                            null,
-                                            'Arduino'
-                                        )
-                                    )
+                                    'Software product development'
                                 ),
                                 _react2.default.createElement(
                                     'li',
                                     null,
-                                    'Blockchain platform technologies (EOS, ETH)'
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    null,
-                                    'Skiing'
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    null,
-                                    'Rock climbing'
+                                    'Embedded computing'
                                 )
                             )
                         )
@@ -50249,6 +50285,10 @@ var _AppBar = __webpack_require__(160);
 
 var _AppBar2 = _interopRequireDefault(_AppBar);
 
+var _Button = __webpack_require__(58);
+
+var _Button2 = _interopRequireDefault(_Button);
+
 var _styles = __webpack_require__(31);
 
 var _Typography = __webpack_require__(21);
@@ -50298,6 +50338,10 @@ var _Drawer2 = _interopRequireDefault(_Drawer);
 var _reactRedux = __webpack_require__(59);
 
 var _redux = __webpack_require__(40);
+
+var _CloudDownload = __webpack_require__(294);
+
+var _CloudDownload2 = _interopRequireDefault(_CloudDownload);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -50374,11 +50418,18 @@ var Shell = function (_Component) {
                                         _Typography2.default,
                                         { className: classes.root, variant: 'h6', color: 'inherit' },
                                         'Artur Kashperskiy'
-                                    )
+                                    ),
+                                    _react2.default.createElement('img', { style: { width: "auto", height: "95%" }, src: 'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/98/2014/09/07214451/W-Logo_Purple_Hex.png' })
                                 ),
                                 _react2.default.createElement(
                                     'div',
                                     { className: classes.flex },
+                                    _react2.default.createElement(
+                                        _Button2.default,
+                                        { target: '_sblank', variant: 'contained', className: classes.button, color: 'primary', href: '/static/AKresume.pdf' },
+                                        _react2.default.createElement(_CloudDownload2.default, { className: classes.rightIcon }),
+                                        'CV'
+                                    ),
                                     _react2.default.createElement(
                                         _IconButton2.default,
                                         { href: 'https://github.com/sm5art', color: 'inherit', 'aria-label': 'Github' },
@@ -50955,7 +51006,7 @@ var old_theme = (0, _styles.createMuiTheme)({
 
 var theme = (0, _styles.createMuiTheme)({
   palette: {
-    type: 'light',
+    type: 'dark',
     primary: {
       light: '#69696a',
       main: '#28282a',
