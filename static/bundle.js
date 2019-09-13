@@ -15636,12 +15636,21 @@ var Hero = function (_Component) {
                                             this.state.years
                                         ),
                                         ' \xA0seconds\xA0/\xA0',
-                                        _react2.default.createElement(
+                                        this.state.width > 900 && _react2.default.createElement(
                                             'span',
-                                            { className: classes.yearText },
-                                            parseInt(this.state.years / 60 / 60 / 24)
+                                            null,
+                                            _react2.default.createElement(
+                                                'span',
+                                                { className: classes.yearText },
+                                                parseInt(this.state.years / 60 / 60 / 24)
+                                            ),
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                '\xA0days\xA0/'
+                                            )
                                         ),
-                                        ' \xA0days\xA0/\xA0',
+                                        '\xA0',
                                         _react2.default.createElement(
                                             'span',
                                             { className: classes.yearText },
@@ -50000,10 +50009,41 @@ var Shell = function (_Component) {
     function Shell(props, context) {
         _classCallCheck(this, Shell);
 
-        return _possibleConstructorReturn(this, (Shell.__proto__ || Object.getPrototypeOf(Shell)).call(this, props, context));
+        var _this = _possibleConstructorReturn(this, (Shell.__proto__ || Object.getPrototypeOf(Shell)).call(this, props, context));
+
+        _this.updateDimensions = _this.updateDimensions.bind(_this);
+        return _this;
     }
 
     _createClass(Shell, [{
+        key: 'updateDimensions',
+        value: function updateDimensions() {
+            var w = window,
+                d = document,
+                documentElement = d.documentElement,
+                body = d.getElementsByTagName('body')[0],
+                width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
+                height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
+
+            this.setState({ width: width, height: height });
+            // if you are using ES2015 I'm pretty sure you can do this: this.setState({width, height});
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.updateDimensions();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            window.removeEventListener("resize", this.updateDimensions);
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            window.addEventListener("resize", this.updateDimensions);
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _props = this.props,
@@ -50054,18 +50094,22 @@ var Shell = function (_Component) {
                                     ),
                                     _react2.default.createElement(
                                         _IconButton2.default,
-                                        { href: 'https://github.com/sm5art', color: 'inherit', 'aria-label': 'Github' },
-                                        _react2.default.createElement(_GithubIcon2.default, null)
-                                    ),
-                                    _react2.default.createElement(
-                                        _IconButton2.default,
                                         { href: 'https://www.linkedin.com/in/artur-kashperskiy-9171ab11a/', color: 'inherit', 'aria-label': 'LinkedIn' },
                                         _react2.default.createElement(_LinkedInIcon2.default, null)
                                     ),
-                                    _react2.default.createElement(
-                                        _IconButton2.default,
-                                        { href: 'mailto:arturk@uw.edu', color: 'inherit', 'aria-label': 'Email' },
-                                        _react2.default.createElement(_Email2.default, null)
+                                    this.state.width > 900 && _react2.default.createElement(
+                                        'div',
+                                        null,
+                                        _react2.default.createElement(
+                                            _IconButton2.default,
+                                            { href: 'https://github.com/sm5art', color: 'inherit', 'aria-label': 'Github' },
+                                            _react2.default.createElement(_GithubIcon2.default, null)
+                                        ),
+                                        _react2.default.createElement(
+                                            _IconButton2.default,
+                                            { href: 'mailto:arturk@uw.edu', color: 'inherit', 'aria-label': 'Email' },
+                                            _react2.default.createElement(_Email2.default, null)
+                                        )
                                     )
                                 )
                             )
