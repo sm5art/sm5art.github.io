@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsby-starter-blog-demo.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 27 May 2022 17:09:25 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[About me I’m a software engineer based in Seattle, WA who enjoys studying algorithims. I am currently a junior at the University of…]]></description><link>https://gatsby-starter-blog-demo.netlify.comlanding/about/about/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.comlanding/about/about/</guid><content:encoded>&lt;h1&gt;About me&lt;/h1&gt;
+&lt;p&gt;I’m a software engineer based in &lt;strong&gt;Seattle, WA&lt;/strong&gt; who enjoys studying algorithims. I am currently a junior at the &lt;strong&gt;University of Washington&lt;/strong&gt; studying Applied Physics and have had industry experience working as a Python/Javascript engineer. Most recently I was a full stack JS engineer at &lt;strong&gt;Heali.ai&lt;/strong&gt;. I currently work on a blog posting about algorithim/AI concepts.&lt;/p&gt;
+&lt;h2&gt;Technologies i’ve been working with&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;typescript/react/redux&lt;/li&gt;
+&lt;li&gt;serverless (AWS Lambda)&lt;/li&gt;
+&lt;li&gt;redis&lt;/li&gt;
+&lt;li&gt;mongoDB&lt;/li&gt;
+&lt;li&gt;tensorflow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;what am i doing now&lt;/h2&gt;
+&lt;p&gt;well some day i might add morestuff here&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Experience Software Engineer Intern @ Autodesk Software Engineer Intern @ Valravn Capital Software Engineer Intern @ Heali.ai Software…]]></description><link>https://gatsby-starter-blog-demo.netlify.comlanding/experience/experience/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.comlanding/experience/experience/</guid><content:encoded>&lt;h1&gt;Experience&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Software Engineer Intern @ &lt;strong&gt;Autodesk&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Software Engineer Intern @ &lt;strong&gt;Valravn Capital&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Software Engineer Intern @ &lt;strong&gt;Heali.ai&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Software Engineer Intern @ &lt;strong&gt;Nipun Capital&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Software Engineer Intern @ &lt;strong&gt;Minted&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Machine Playing Pong Unsupervised with Genetic Algorithims 🧬 (WIP)]]></title><description><![CDATA[Introduction A well-defined problem is the first step when coming up with a model.
+Then, a problem is modeled with mathematics and then…]]></description><link>https://gatsby-starter-blog-demo.netlify.comblogs/genetic-blog/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.comblogs/genetic-blog/</guid><pubDate>Sat, 04 Jan 2020 22:40:32 GMT</pubDate><content:encoded>&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;A well-defined problem is the first step when coming up with a model.
+Then, a problem is modeled with mathematics and then algorithims are used to &lt;strong&gt;optimize&lt;/strong&gt; this model to its &lt;strong&gt;best parameters&lt;/strong&gt;.
+The specific problem we are looking at in this blog is the problem of playing pong algorithimically and unsupervised.
+In this blog we are covering one specific type of unsupervised learning algorithim: the genetic algorithim.
+Genetic algorithms are an algorithim introduced in 1960 by John Holland inspired by Darwin’s theory of evolution.
+I will first define the context we are appying the algo to understand the model and why we even need this algo in the first place and then I will include an implementation of the algo later in the blog.
+I assume the reader has a basic understanding of linear algebra (linear algebra equations).
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 589px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5d921bbf2f1190d34b93514116e8251b/86a2c/evolution.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.94594594594595%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAgADBf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAAB6YTzdYx//8QAGxAAAQQDAAAAAAAAAAAAAAAAAgABAzEREzL/2gAIAQEAAQUC35IDclHyNJ7/AP/EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/ASf/xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPwFn/8QAHBAAAQMFAAAAAAAAAAAAAAAAAQARIQISIIHw/9oACAEBAAY/AhaIch1S/Qt4f//EABwQAQABBAMAAAAAAAAAAAAAAAEAEBEhUUGB8P/aAAgBAQABPyHCNlEaI005svEJuvtPPc3Q/9oADAMBAAIAAwAAABBE3//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8Qgaun/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAgBAgEBPxBsOcv/xAAeEAACAQQDAQAAAAAAAAAAAAABEQAhMYGxQaHB0f/aAAgBAQABPxBH4IkCWIZozD1pKiQP6Jh6KLKngljozf4gtn5L2NCf/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Evolution&quot;
+        title=&quot;Evolution&quot;
+        src=&quot;/static/5d921bbf2f1190d34b93514116e8251b/86a2c/evolution.jpg&quot;
+        srcset=&quot;/static/5d921bbf2f1190d34b93514116e8251b/a80bd/evolution.jpg 148w,
+/static/5d921bbf2f1190d34b93514116e8251b/1c91a/evolution.jpg 295w,
+/static/5d921bbf2f1190d34b93514116e8251b/86a2c/evolution.jpg 589w&quot;
+        sizes=&quot;(max-width: 589px) 100vw, 589px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1&gt;Modeling The Problem&lt;/h1&gt;
+&lt;p&gt;In this section we are solving the sub-problem of coming up with the inputs and outputs of our model such that we get a model that will suit our specific task of figuring out when to move a pong paddle up or down in relation to the game state.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The problem&lt;/strong&gt; - Designing a function that takes any given information from the game state that outputs the ideal action. Mathematically what this model looks like is a function with a domain (input values) that spans the game state and a range (output values) that spans the possible actions.&lt;/p&gt;
+&lt;h2&gt;How do we model?&lt;/h2&gt;
+&lt;p&gt;A model has input features and outputs which are designed based on what the problem specifies. We will be using linear algebra to drive the “unknown” part of this model.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;i.e. y = Ax+B
+x - game state
+y - outputs
+A, B - unknown&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;The game state (inputs)&lt;/h2&gt;
+&lt;p&gt;Since the pong game is written in python we have direct memory access to the ball and paddle speed and direction in the x/y direction which we will be using in the engineering of the inputs/game state. The game state will change every frame of the game which will plug into the model to decide the optimal output. The inputs are normalized to reduce weight explosions when optimizing.
+&lt;em&gt;Note: Max Speed and Screen Height are constants defined in the code and could be changed&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6d93b6ae8d97963b81e5f4e5e5f5d7d1/78274/inputs.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 69.5945945945946%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTklEQVQ4y32UW0/CQBCFF3kQEVGKtlQLgogtyqUttomamOiDxv//h5wxH2Ss1E1OdrrTOXvm0jr3ezXYM8Gd+7uagoXg3O1fRfXggD0WHGEHgkgQsk8Ej4Irzq451+VZVZZwLjjBXgtKwRtEA8G74NWcr3k3rFNoCY+xT4EvGAm6gjb+Q5PNTmGDGlUJO4Ieu9buyfjP8G3f9Wtq+xPQwZ7xvGRXFSnN0Vrn2DuFtxRTbxrjSMytQ8FUsBLccP4C+RjS0BIW1MYzhDHpFHSwR1dbBOf4PZ6ncFzUpZzw8oLgjD3Cp13ecKF2/plM/bouJ6haYqeoLlEUQ7Yi/U/K0Xc1X0rCWPRBhMoJnQ5QP2QGR4yPXyWyc9g1vhbjsk09NURNEx/89+np2NwTvEFRwRiV2Dm+D9PIvSmn/Bzm1OaBgIy0BhDqhV805VJVfwMxLhnz986yDAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;The inputs&quot;
+        title=&quot;The inputs&quot;
+        src=&quot;/static/6d93b6ae8d97963b81e5f4e5e5f5d7d1/fcda8/inputs.png&quot;
+        srcset=&quot;/static/6d93b6ae8d97963b81e5f4e5e5f5d7d1/12f09/inputs.png 148w,
+/static/6d93b6ae8d97963b81e5f4e5e5f5d7d1/e4a3f/inputs.png 295w,
+/static/6d93b6ae8d97963b81e5f4e5e5f5d7d1/fcda8/inputs.png 590w,
+/static/6d93b6ae8d97963b81e5f4e5e5f5d7d1/78274/inputs.png 644w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;The actions (outputs)&lt;/h2&gt;
+&lt;p&gt;The outputs for &lt;strong&gt;the problem&lt;/strong&gt; is the pong paddle’s direction of action.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9111b2648fb9883eef9040b2f41fcbb1/d26de/outputs.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 22.2972972972973%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbElEQVQY022P3QqAIAxGjSKj6M8sMev9X7Pv4gQjGhzUsZ1N55yLohOzGMRKLsDGuRhGsYuJHi9aHL+xImlMrhIXoiJu7pmhhy18o2ZqYose8cgGhe1PI0/UZCv9yiNf8wx5h500ZYSBd0C8PZSvBEZUl5ZHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;The outputs&quot;
+        title=&quot;The outputs&quot;
+        src=&quot;/static/9111b2648fb9883eef9040b2f41fcbb1/fcda8/outputs.png&quot;
+        srcset=&quot;/static/9111b2648fb9883eef9040b2f41fcbb1/12f09/outputs.png 148w,
+/static/9111b2648fb9883eef9040b2f41fcbb1/e4a3f/outputs.png 295w,
+/static/9111b2648fb9883eef9040b2f41fcbb1/fcda8/outputs.png 590w,
+/static/9111b2648fb9883eef9040b2f41fcbb1/efc66/outputs.png 885w,
+/static/9111b2648fb9883eef9040b2f41fcbb1/c83ae/outputs.png 1180w,
+/static/9111b2648fb9883eef9040b2f41fcbb1/d26de/outputs.png 2061w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Algebra of a Neural Network&lt;/h2&gt;
+&lt;p&gt;I used a simple neural network with one set of hidden layers to model the behavior of the paddle.
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/50952e36ae32e15c2a8db8a81eff6904/587b0/model.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 8.783783783783782%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAVUlEQVQI1y3OOQqAQBBE0QrdmEBUFAYHXBBExMAzeP8j+QcqeDQ01Ysk9ahxIGLDidl1wYAXI0oE9z7PVGiQoA4Fbjxekq0OBwcv13x88sLdR1o/Fn9uigSBoxd9FAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;The outputs&quot;
+        title=&quot;The outputs&quot;
+        src=&quot;/static/50952e36ae32e15c2a8db8a81eff6904/fcda8/model.png&quot;
+        srcset=&quot;/static/50952e36ae32e15c2a8db8a81eff6904/12f09/model.png 148w,
+/static/50952e36ae32e15c2a8db8a81eff6904/e4a3f/model.png 295w,
+/static/50952e36ae32e15c2a8db8a81eff6904/fcda8/model.png 590w,
+/static/50952e36ae32e15c2a8db8a81eff6904/efc66/model.png 885w,
+/static/50952e36ae32e15c2a8db8a81eff6904/587b0/model.png 970w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+Dimensions of variables&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: hidden layers is a constant&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;x: 4x1 (game state/domain)
+y: 1x1  (actions/range)
+A: # hidden layers x 4 (unknown weights)
+B: # hidden layers x 1 (unknown bias)
+C: 1 x # hidden layers (unknown weights)
+D: 1x1 (unknown bias)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the model I engineered after a few attempts including linear regression. The weights and bias A, B, C, D are all unknown and will be optimized for in the next section of the blog.&lt;/p&gt;
+&lt;h1&gt;The Genetic Algorithim&lt;/h1&gt;
+&lt;h2&gt;Why is this even necessary?&lt;/h2&gt;
+&lt;p&gt;As I mentioned in the previous section, we have 4 weights and bias terms that we need to optimize for yet we don’t have a labeled data set that represents what a pong player should do depending on these inputs. This will require the usage of an unsupervised learning algorithim which will evaluate the progress of learning through a different heuristic. &lt;/p&gt;
+&lt;h2&gt;What is a chromosome (genetic algorithim)?&lt;/h2&gt;
+&lt;h2&gt;Contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A chromosome which expresses a possible solution to the problem as a string&lt;/li&gt;
+&lt;li&gt;A fitness function which takes a chromosome as input and returns a higher value for better solution(much more likely to reproduce)&lt;/li&gt;
+&lt;li&gt;A population which is just a set of many chromosomes&lt;/li&gt;
+&lt;li&gt;A selection method which determines how parents are selected for breeding from the population&lt;/li&gt;
+&lt;li&gt;A crossover operation which determines how parents combine to produce offspring&lt;/li&gt;
+&lt;li&gt;A mutation operation which determines how random deviations manifest themselves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What’s the heurstic that drives you to a solution?&lt;/h2&gt;
+&lt;p&gt;Genetic algorithims rely on a fitness heurstic which is a function that takes a chromosome and returns a higher value for a better performing solution.&lt;/p&gt;</content:encoded></item></channel></rss>
