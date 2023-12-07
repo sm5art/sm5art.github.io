@@ -506,7 +506,7 @@ const testRequireError = (moduleName, err) => {
 let Html;
 
 try {
-  Html = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../src/html'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  Html = __webpack_require__(/*! ../src/html */ "./src/html.js");
 } catch (err) {
   if (testRequireError(`../src/html`, err)) {
     Html = __webpack_require__(/*! ./default-html */ "./.cache/default-html.js");
@@ -32762,6 +32762,73 @@ var e=__webpack_require__(/*! object-assign */ "./node_modules/object-assign/ind
 
 /***/ }),
 
+/***/ "./src/html.js":
+/*!*********************!*\
+  !*** ./src/html.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HTML; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function HTML(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", props.htmlAttributes, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("head", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    charSet: "utf-8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    httpEquiv: "x-ua-compatible",
+    content: "ie=edge"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "preconnect",
+    href: "https://fonts.googleapis.com"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossorigin: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    href: "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap",
+    rel: "stylesheet"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    async: true,
+    src: "https://www.googletagmanager.com/gtag/js?id=G-SQ2JJVZFCH"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    dangerouslySetInnerHTML: {
+      __html: `
+        window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-SQ2JJVZFCH');
+        `
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1, shrink-to-fit=no"
+  }), props.headComponents), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", props.bodyAttributes, props.preBodyComponents, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: `body`,
+    id: "___gatsby",
+    dangerouslySetInnerHTML: {
+      __html: props.body
+    }
+  }), props.postBodyComponents));
+}
+HTML.propTypes = {
+  htmlAttributes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  headComponents: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  bodyAttributes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+  preBodyComponents: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array,
+  body: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  postBodyComponents: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array
+};
+
+/***/ }),
+
 /***/ "./src/utils/typography.js":
 /*!*********************************!*\
   !*** ./src/utils/typography.js ***!
@@ -32777,10 +32844,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var typography__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typography__WEBPACK_IMPORTED_MODULE_0__);
 
 const typography = new typography__WEBPACK_IMPORTED_MODULE_0___default.a({
-  baseFontSize: '14px',
+  baseFontSize: '16px',
   baseLineHeight: 1.5,
-  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-  bodyFontFamily: ['Georgia', 'serif'] // See below for the full list of options.
+  headerFontFamily: ['Ubuntu', 'sans-serif'],
+  bodyFontFamily: ['Ubuntu', 'serif'] // See below for the full list of options.
 
 }); // Hot reload typography in development.
 
